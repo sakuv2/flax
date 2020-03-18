@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:12-alpine
+    container_name: db-container 
+    ports: 
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGPASSWORD=postgres
+      - POSTGRES_DB=flax
+      - DATABASE_HOST=localhost
+    volumes:
+      - $PWD/docker/db/init:/docker-entrypoint-initdb.d

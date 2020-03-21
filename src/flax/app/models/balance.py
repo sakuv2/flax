@@ -1,8 +1,6 @@
-from typing import NewType
-
 from pydantic import BaseModel
 
-Code = NewType("Code", str)
+from .currency import Code
 
 
 class BalanceBase(BaseModel):
